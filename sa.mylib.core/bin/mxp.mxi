@@ -1,0 +1,48 @@
+<macromedia-extension name="myLib_0.7.8" version="0.7.8" mxiversion="1.0" type="flashcomponent" show-files="false">
+  <defaultLanguage>en_US</defaultLanguage>
+  <author name="Samuel EMINET aka SamYStudiO"/>
+  <description><![CDATA[myLib flash AS3 components alternative]]></description>
+  <update url="http://mylib.samystudio.net" method="directlink"/>
+  <products>
+    <product name="Flash" version="9" primary="true"/>
+    <product name="Flash" version="10"/>
+    <product name="Flash" version="11"/>
+  </products>
+  <license-agreement><![CDATA[http://mylib.samystudio.net]]></license-agreement>
+  <ui-access><![CDATA[	MYLIB **********************************************************************<br>
+<br>
+		http://mylib.samystudio.net/<br>
+<br>
+	AUTHOR *********************************************************************<br>
+<br>
+		@author		: Samuel EMINET aka SamYStudiO<br>
+		@mail		: contact@samystudio.net<br>
+		@blog		: http://blog.samystudio.net/<br>
+<br>
+	INSTALLATION ***************************************************************<br>
+<br>
+		- [Developer/Designer] Run bin/myLib.mxp or copy manually "bin/myLib_0.7.8.fla" to your flash component directory (Windows : "C:\Program Files\Adobe\Adobe Flash CS3\[lang]\Configuration\Components").<br>
+		- [Developer/Designer] Restart Flash IDE or refresh your component panel if Flash is already running.<br>
+		- [Developer] CS4/CS5/Flex users should add bin/myLib.swc to classpath, CS3 users should add "src" folder to Flash classpath.<br>
+<br>	
+		To open components panel go to > Window > components (ctrl + f7).<br>
+		If myLib components do not displayed try :<br>
+			- press components panel top right context button > Reload Components<br>
+			- otherwise myLib_0.7.8.fla is maybe not installed where it should be, go to [programs_path]\Adobe\[flash], in each languages folders try to find myLib_0.7.8.fla in components folder and copy it to others languages.<br>
+<br>
+		That's it!<br>
+<br>
+	DOCUMENTATION **************************************************************<br>
+<br>
+		- API can be found in api folder<br>
+		- online API : http://mylib.samystudio.net/api/<br>
+		- Documentation : http://mylib.samystudio.net/?page_id=20<br>
+<br>
+	FORUM / BUG REPORT / FEATURE REQUEST ***************************************<br>
+<br>
+		http://mylib.samystudio.net/forum]]></ui-access>
+  <files xml:lang="en_US" default-file-type="ordinary">
+    <file source="myLib_0.7.8.fla" destination="$Flash/components" shared="false" systemfile="false" isresourcefile="false"/>
+  </files>
+  <configuration-changes/>
+</macromedia-extension>

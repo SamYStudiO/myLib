@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../override.css" type="text/css"><meta name="keywords" content="DateFormatter,myLib.utils.DateFormatter,MONTHS,MONTHS_SHORT,WEEKDAY,WEEKDAY_SHORT,currentCount,currentTime,delay,repeatCount,running,capitalize,clamp,clearDescribeTypeCache,compare,copy,degreeToRadian,describeType,digitFormat,equation2D,extendsClass,format,format,generateNumberArray,getClassByName,getDateFrom,getDays,getHours,getInstance,getInstanceByName,getMilliseconds,getMinutes,getSeconds,getTimeFrom,getWeeks,hasAccessor,hasMethod,hasMethod,hasProperty,hasProperty,hasVariable,hasVariable,hasVariableOrAccessor,hasWritableAccessor,hasWritableVariableOrAccessor,implementsInterface,isDynamic,isEither,isEmail,isFinal,isInteger,isSimple,isWhitespace,merge,moneyFormat,pythagoras,radianToDegree,reset,shuffle,sign,start,stop,toString,trim,trimLeft,trimRight"><title>myLib.utils.DateFormatter</title></head><body><script language="javascript" type="text/javascript" src="../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../help.js"></script><script language="javascript" type="text/javascript" src="../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'DateFormatter - myLib 0.7.8';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">myLib 0.7.8 Documentation</td><td class="titleTableTopNav" align="right"><a href="../../package-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../class-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../all-index-A.html" onclick="loadClassListFrame('../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../index.html?myLib/utils/DateFormatter.html&amp;myLib/utils/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">DateFormatter</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("DateFormatter"); titleBar_setSubNav(false,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">myLib.utils</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public final   class  DateFormatter</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">DateFormatter  <img src="../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> Object</td></tr></table><p></p><p></p><p></p>
+	 DateFomatter convert Date objects to string representation using formats (yyyy/MM/dd for example).
+	 
+	 <p>Patterns list :</p>
+	 
+	              <li>yy	: year with two digits (08)</li>
+	              <li>yyyy	: year with four digits (2008)</li>
+	              <li>M	: month with one or two digits (2)</li>
+	              <li>MM	: month two digits (02)</li>
+	              <li>MMM	: month using short month name (Feb)</li>
+	              <li>MMMM	: month using full month name (February)</li>
+	              <li>d	: month day with one or two digits (9)</li>
+	              <li>dd	: month day with two digits (09)</li>
+	              <li>D	: day of the year using one, two or three digits (12)</li>
+	              <li>DD	: day of the year using three digits (012)</li>
+	              <li>E	: week day using short week name (Sat)</li>
+	              <li>EE	: week day using full week name (Saturday)</li>
+	              <li>w	: week of the year with one or two digits (9)</li>
+	              <li>ww	: week of the year with two digits (09)</li>
+	              <li>h	: hour in range 0-12 with one or two digits (1)</li>
+	              <li>hh	: hour in range 0-12 with two digits (01)</li>
+	              <li>H	: hour in range 0-23 with one or two digits (13)</li>
+	              <li>HH	: hour in range 0-23 with two digits (13)</li>
+	              <li>m	: minute with one or two digits (8)</li>
+	              <li>mm	: minute with two digits (08)</li>
+	              <li>s	: second with one or two digits (5)</li>
+	              <li>ss	: second with two digits (05)</li>
+	              <li>S	: millisecond with one, two or three digits (3)</li>
+	              <li>SS	: millisecond with three digits (003)</li>
+	              <li>aa	: meridian "am" or "pm" in lower case</li>
+	              <li>AA	: meridian "AM" or "PM" in upper case</li>
+	              <li>o	: timezone (+0100)</li>
+	              <li>O	: timezone with ":" separator between hours and minutes (+01:00)</li>
+	 
+	           <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#MONTHS" class="signatureLink">MONTHS</a> : Array<div class="summaryTableDescription">[static] 
+		 An Array of full month names.</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#MONTHS_SHORT" class="signatureLink">MONTHS_SHORT</a> : Array<div class="summaryTableDescription">[static] 
+		 An Array of short month names (3 chars).</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#WEEKDAY" class="signatureLink">WEEKDAY</a> : Array<div class="summaryTableDescription">[static] 
+		 An Array of full week day names.</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#WEEKDAY_SHORT" class="signatureLink">WEEKDAY_SHORT</a> : Array<div class="summaryTableDescription">[static] 
+		 An Array of short week day names (3 chars).</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#format()" class="signatureLink">format</a>(d:Date, format:String, escapeChar:String = @):String</div><div class="summaryTableDescription">[static] 
+		 Convert a Date object to a string representation.</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getDateFrom()" class="signatureLink">getDateFrom</a>(from:String, format:String, caseSensitive:Boolean = false, autoAddOverflow:Boolean = false):Date</div><div class="summaryTableDescription">[static] 
+		 Convert a string date representation to a Date object using specified format.</div></td><td class="summaryTableOwnerCol">DateFormatter</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="MONTHS"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">MONTHS</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>public static var MONTHS:Array</code><p></p><p></p><p>
+		 An Array of full month names.
+		 </p></div><a name="propertyDetail"></a><a name="MONTHS_SHORT"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">MONTHS_SHORT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static var MONTHS_SHORT:Array</code><p></p><p></p><p>
+		 An Array of short month names (3 chars).
+		 </p></div><a name="propertyDetail"></a><a name="WEEKDAY"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">WEEKDAY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static var WEEKDAY:Array</code><p></p><p></p><p>
+		 An Array of full week day names.
+		 </p></div><a name="propertyDetail"></a><a name="WEEKDAY_SHORT"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">WEEKDAY_SHORT</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static var WEEKDAY_SHORT:Array</code><p></p><p></p><p>
+		 An Array of short week day names (3 chars).
+		 </p></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="format()"></a><a name="format(Date,String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">format</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public static function format(d:Date, format:String, escapeChar:String = @):String</code><p></p><p></p><p>
+		 Convert a Date object to a string representation.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">d</span>:Date</code> &mdash; The date object to convert.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">format</span>:String</code> &mdash; The format to use with conversion.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">escapeChar</span>:String</code> (default = <code>@</code>)<code></code> &mdash; A Char to used to esape format patterns.
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; The date converted to a string representation.
+		 </td></tr></table></div><a name="getDateFrom()"></a><a name="getDateFrom(String,String,Boolean,Boolean)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getDateFrom</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function getDateFrom(from:String, format:String, caseSensitive:Boolean = false, autoAddOverflow:Boolean = false):Date</code><p></p><p></p><p>
+		 Convert a string date representation to a Date object using specified format.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">from</span>:String</code> &mdash; The string date representation.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">format</span>:String</code> &mdash; The patterns format to used.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">caseSensitive</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; A boolean that indicates if format is case sensitive.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">autoAddOverflow</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; A Boolean that indicates if an overflow value (a value that does not match a pattern range > month 13 out of range 1-12) is allowed.
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Date</code> &mdash; The date object from string representation. If conversion is impossible the value is null.
+		 </td></tr></table></div><br/><br/><hr><br/><p></p><center class="copyright"><footer>http://mylib.samystudio.net</footer><br/>Dimanche Mars 6 2011, 02:29 AM +01:00  </center></div></body></html><!--http://mylib.samystudio.net<br/>Dimanche Mars 6 2011, 02:29 AM +01:00  -->

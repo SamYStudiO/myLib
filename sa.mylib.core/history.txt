@@ -1,0 +1,273 @@
+===================================================
+11/10/xx	v0.8
+===================================================
+	Bugs Fixed :
+		
+	
+	Features Added :
+		* Skinset management @see myLib website documentation.
+		* Error skin with IField component to show an error when field is invalid when using Form class.
+		* Added color property for each Button state (overTextColor, downTextColor, selectedTextColor, overSelectedTextColor, etc...).
+		* Added arrowButtonWidth property from ComboBox
+		
+	
+	Also several minor bugs fixed and features added.
+
+===================================================
+11/03/06	v0.7.8
+===================================================
+	Bugs Fixed :
+		* Fix initial assets size when creating custom assets (@see http://mylib.samystudio.net/forum/viewtopic.php?f=26&t=55).
+		* Fix possible range error thrown with moveFront and moveBack methods from DepthManager class.
+		* Fix possible security error thrown with FocusManager.
+		* Fix possible BUFFER_EMPTY event dispatched with MediaPlayer when file is complete.
+		* Fix error thrown when close method was called with MediaPlayer using LoaderStream (flash movie or picture files).
+		* Fix sometimes incorrect Button icons display.
+		* When using Button groupOwner property, button is now automatically added/removed to group when button is added/removed from stage (to avoid memory leak)
+		* Fix a bug with scroll components which occured when update was called and scroll was no longer required target was still cropped with previous scroll properties.
+		
+	
+	Features Added :
+		* Button curentState read only property is now also writable so you can change state with no mouse interaction.
+		* Added textColor property with Label components and its sub components.
+		* Remove autoSize, keepAspectRatio and aspectRatioMode properties from MediaPlayer component, this can now be achieved using screenScaleMode property (@see stage.scaleMode).
+		* Added closeOnRemoveFromStage property (true/false) from MediaPlayer which close automaticaly current stream when player instance is removed from stage (which is what we want in most case).
+		* Added allowVideoScaleZoom property from MediaPlayer component to allow only video zoom out (no zoom in).
+		* Added checkStates method from MediaPlayer which let you get the current player states (@see new MediaPlayerState constants class)
+		* StreamMedia first argument request can now be either URLRequest or String.
+		* ScrollBar mouseWheelDeltaSize property default value is now 3 insteadof 0
+		* It now possible to use Class object to create asset with default myLib skin (previously only String definition, BitmapData and external http url could be used).
+		* IField Components now inherit from AFieldCompoenent and also implements new IFieldComponent interface
+		* Added cleanContainer top level function in displayUtils package, useful to remove all DisplayObjectContainer children.
+		* Added new patterns with DateFormatter class (check documentation update)
+		
+	Also several minor bugs fixed and features added.
+		
+===================================================
+10/02/27	v0.7.7 beta
+===================================================
+	Bugs Fixed :
+		* Fix compilation error using Flex compiler
+		* Fix when using external asset with components sometimes they don't display.
+		* Fix ScrollBar bug while dragging thumb and mouse hit up or down asset.
+		* Apply custom text to ComboBox now clear current selection cell.
+		* Clear selection from ComboBox now set defaultText value to it.
+		* With ComboBox if up or down open direction are not enough large to show all opened list, the default open direction set is now applied.
+		* Fix sometimes wrong stepper thumb asset layout.
+		* Fix default text not removed with TextInput when component get focused.
+		* Add scrollRect hack (http://bugs.adobe.com/jira/browse/FP-177) with mouse scroll component since it was already added with ScrollBar.
+		* Fix NumberUtils clamp error with FocusManager (FocusManager complete review)
+
+	Features Added :
+		* Button dragOutKeepCurrentState property is renamed to disabledDragOutState to match disabledDragOverState property.
+		* Button disabledDragOverState is set as true by default.
+		* ComboBoxOpenType class is renamed to ComboBoxTransitionType to better match name with Combobox transitionType property.
+		* When text is set with ComboxBox using text property, this now clear current selection. 
+		* Added new ComboBoxStepper component, mix between ComboBox and stepper components.
+		* list components have now next and previous methods to select next or previous item from current selected cell.
+		* Added tweenToPosition and tweenToChild method with scroll components.
+		* Components Assets no longer need to implement IAsset class (if so asset factory build an IAsset implementation and add asset as a child) even if implementing IAsset is better when you want to layout your asset while component is resized. 
+		* Complete FocusManager and FocusGroup review, hope this is more stable now, you can now create group with DisplayObjectContainer to automatically add container instance.
+		* Move scrollrect hack to SizeManager class (getScrollTargetContentSize method) so make it available for personal use.
+		* With Form class you can create instance passing form script request as parameter, if so when a component is focus and enter key is pressed this automatically send form to script.
+		* Form addField and addFieldAt methods have now all arguments optional (except field of course) since you can inject this arguments directly through component itself.
+		* MediaPlayer can now read HTTPPseudo stream and RTMP files.
+		* MediaPlayerEvent renamed to StreamEvent, also add BUFFER_EMPTY and PLAY_START event, rename BUFFER_COMPLETE event to BUFFER_FULL.
+		* Mediaplayer complete review to include new HTTPPseudo stream and RTMP, hope no regression here.
+		
+	Also several minor bugs fixed and features added.
+
+===================================================
+09/04/26	v0.7.2
+===================================================
+	Bugs Fixed :
+		* Fix removeField method from Form class.
+		* Fix FieldMatchValidator isValid method.
+		* Fix autoSize with MediaPlayer.
+		* Fix List cellSpacing property.
+		* Fix automatic update with scroll components when a resize was done with width/height properties or setSize method.
+		
+	Features Added :
+		* !!!Since a solution is found with scrollRect bug (http://bugs.adobe.com/jira/browse/FP-177) width and height arguments with scroll component update method are now optional.
+		* Subtitle class now implements ISubtitle so you can create your own subtitle reader.
+		* Add arrowButtonPosition property with ComboBox to choose prefered left or right button position.
+		* Add scrollBarPosition property with List and ComboBox to choose prefered left or right scroll position.
+		* All components now implements their own interfaces, this is useful when using shared library for example to avoid compiling source files without assets.
+			var ComboboxClass : Class = getDefinitionByName( "myLib.controls.ComboBox" ) as Class;
+			var cb : IComboBox = new ComboBoxClass();
+			cb.autoSize = true;
+			addChild( cb as DisplayObject );
+
+	!!! New license under MPL (http://www.mozilla.org/MPL/), license is less restrictive, the only restriction is to publish original code modification under MPL license. !!!
+
+	Also several minor bugs fixed and features added.
+
+===================================================
+09/02/07	v0.7.1
+===================================================
+	Bugs Fixed :
+		* Fix picture smoothing with MediaPlayer (smoothing was not apply if smoothing was set before play method was called).
+		* Missing inspectable properties with MediaPlayer.
+		* FocusManager : fix random thrown error with input textfield when tab key was pressed.
+		* Fix ComboBox boxListRollOut event.
+		* Fix missing getCellStyleAt method with ComboBox.
+		* Fix List setCellStyleAt method (specific index style was not apply).
+		* Fix Stepper missing assets when adding component to flash IDE library.
+		* Fix Stepper and ColorPicker with designer mxp (actually these components did not work properly without adding source files to flash classpathes.
+		* Fix ColorPicker captureBackground property.
+		
+	Features Added :
+		* playStart event with MediaPlayer (playStart event is fired only once when media is buffered and autoPlay is true).
+		* add openMouseAction property with ComboBox which allow to use prefered open action (click or roll to open/close list).
+		
+	Also several minor bugs fixed.
+
+===================================================
+09/01/04	v0.7
+===================================================
+	Bugs Fixed :
+		* Resume sound media after a pause with MediaPlayer (resume to wrong position).
+		* Several enabled skin problems, some components were not skinned correctly when enabled was turn off.
+		* Fix groupOwner problem with Button when several groups were present.
+		* Fix multiple errors thrown with SimpleMediaController.
+		* Fix sound problem with MediaPlayer/SimpleMediaController when sound was mute, next media was played and unmuted was called.
+		* Some incorrect behaviors with ComboBox autoCompletion.
+		* ComboBox layout when editable and autoSize were true and dataProvider was empty.
+		* Fix playlist order when media was played manually with MediaPlayer.play method.
+		* Fix severals thrown errors with List/ComboBox when dataProvider was empty.
+		* Inspectable properties were applied even if these properties have already be modified by code.
+		* Improve focus management.
+		* Fix empty label in DataProvider when an XMLList object was used as source with attributes and empty simple content.
+		* Fix key control with ScrollBar when it was not useful and up/down/home/end/etc... were pressed, content scrolled up/down.
+		* Fix screen visibility with MediaPlayer, if play/resume was called before buffering was complete video screen was not display.
+		* Improve ScrollBar tween.
+		* Fix ComboBox focus rectangle when focus was out and dropdown list opened focus rectangle was not removed if dropdown list was focused.
+		* Fix Flash CS4 live preview problems.
+		
+	Features Added :
+		* Stepper/NumericStepper components.
+		* ColorPicker component.
+		* streamClient property with StreamMedia object, this is useful to defined a custom client with netStream media and add custom callback like onMetaData.
+		* change event added with TextInput/TextArea.
+		* change event added with ButtonGroup.
+		* getItemPosition with Iterator to get item position within an iterator since it can be different of its collection position.
+		* ButtonGroupManager no longer exist, getGroup method is added to ButtonGroup class as a static method.
+		* Add repeatMouseDown event with Button to catch down event while mouse is down.
+		* myLib SWC is now available for CS4/Flex users.
+		* alignment property with MediaPlayer to layout screen when keepAspectRatio is true.
+		
+	In progress :
+		* DateField
+		* DataGrid	
+		
+	Also several minor bugs fixed and features added.
+	
+===================================================
+08/11/15	v0.6 (public beta)
+===================================================
+	Bugs Fixed :
+		* selectedIndex with List/ComboBox is fixed.
+		* textStyle with List/ComboBox.
+		* html text with ListCell is now ok.
+		* mask is now active with List cells.
+		* TextField color was sometimes wrong when mouse events occurred with Button components.
+		* Inspectable padding is now ok with Label.
+		* List cells were sometimes not sized correctly.
+		* scrollStyle is now ok with List/ComboBox.
+		* isBuffered property from MediaPlayer was not write correctly (isBufferd).
+		* StyleManger.setTextStyle is now ok with embedFonts.
+		* enabled property is now ok with ScrollPane.
+		* ScrollPane live preview is now ok.
+		* MediaPlayer live preview is now ok.
+		* Focus management is now ok.
+		* When autoCompletion was active with ComboBox and dropdown list was refesh, when typing a letter with different cell count it was not layout correctly.
+		* Fix problem with Label inspectable padding.
+		* Fix severals problems with Form class.
+		* Fix layout problems with autoSize and keepAspectRatio in Mediaplayer.
+		* SimpleMediaController can now be used even if "Automatically declare stage instancers" is checked in publish settings.
+		* Fix problem with DateFormatter getDateFrom method and caseSensitve argument.
+		
+	Features Added :
+		* Colorize class is now static.
+		* html property is now from Label class instead of ListCell (when html is true and text property is called, htmlText is apply).
+		* Slider thumbVerticalAignment to manage best thumb layout.
+		* Collection and Iterator pattern in myLib.data package ( DataProvider, PlayList, ButtonGroup,..., classes now inherit from SimpleCollection )
+		* ArrayUtils class in myLib.utils package with shuffle method.
+		* upDownPosition property for ScrollBar which allow to choose up and down button layout(up, topBottom or bottom).
+		* BANDWIDTH_MARGIN static property with MediaPlayer to modify security when bandwidth is calculate.
+		* Add next and previous methods in MediaPlayer to play next/previous media from current playlist.
+		* Button selected state can now be toggle with space and enter key when  Button has focus.
+		* Focus rectangle skin added.
+		* defaultText property with TextInput component, text display when user have not yet type anything.
+		* USE_PIXEL_SNAPPING move to myLib.displayUtils package.
+		* isValidField method in Form class to test one field validity.
+		* The is no longer INVALID_FORM event with Form class, isValid and validateAndLoad method can now return directly errors.
+		* STAGE and ROOT top level constants moved to myLib.ui package.
+		* Add subtitle management with MediaPlayer( SRT format ).
+		* clamp method with NumberUtils class can now throw an Error last new argument specified it.
+		* Add caseSentive argument with getTimeFrom method in TimeFormatter class.
+		* First pass for documentation (still need a complete review and more example)
+	
+	Also several minor bugs fixed and features added.
+		
+===================================================
+08/10/03	v0.5 (Testing purposes only)
+===================================================
+	Bugs Fixed :
+		* Severals layout problems with Label and its subclasses.
+		* With external asset, when asset was loaded component was not drawn.
+		* With scroll components scroll target display was incorrect when update method was called.
+		* ScrollBar thumb was not always size correctly when update method was called.
+		* Severals problems in utils Classes.
+		
+	Features Added :
+		* Slider component.
+		* TextArea component.
+		* ScrollPane component.
+		* List component.
+		* ComboBox component.
+		* Form management.
+		* Medias management.
+		* ClassUtils (myLib.utils.ClassUtils).
+		* TimeFormatter (myLib.utils.TimeFormatter) class to convert milliseconds to string like DateFormatter does.
+		* Icons are now skinable at runtime.
+		* Application and MovieApplication class (in myLib.ui), make easier programming stage.scaleMode, stage.showMenu, etc... 
+		* Severals methods added in utils Classes.
+		* isMovie top level function which check if a object is a MovieClip with multiple frame
+		
+	Known issues :
+		* List multipleSelection ( problems with mouseEvent ).
+		* MediaPlayer and ScrollPane have no livePreview.
+		* Mask in List and ComboBox is not active at the moment
+		* Incorrect autoSize with Label when shape border are used with background asset
+		
+	In progress :
+		* Focus management, focus rectangle skin. (in progress).
+		* MediaController components (an alternative to SimpleMediaController which can resize itself).
+		* FMS video with MediaPlayer.
+		
+	Also several bugs fixed and features added (too many changes from previous release to list all).
+	
+===================================================
+Never publish	v0.1 (Testing purposes only)
+===================================================
+	Bugs Fixed :
+		* An exception was thrown with Button components when they were removed from displayList and there groupOwner was null.
+		* MouseScroll components were not sized correctly.
+		* Several problems with layout of Label component and its subclasses.
+		* Scroll components were not always sized correctly when direction was horizontal.
+		* Improve and fix some problems with ScrollBar mouse wheel.
+		* Components assets are now read only.
+		
+	Features Added :
+		* Some utils classes have been complete.
+		* "maximizeTextWidth" property is added to Label component and its subclasses for advanced layout. 
+		* ScrollBar.scrollToChild method which allow to scroll to a child of scroll target.
+		
+	Also several minor bugs fixed and features added.
+	
+
+===================================================
+08/07/12	coreTest v0.0 (Testing purposes only)
+===================================================
+	Initial released for testing purpose only.
