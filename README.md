@@ -5,7 +5,7 @@ Usage
 ====
 <code><br>
 //set a skin for all components<br>
-setDefaultSkinSet( new FlatSkinSet( 10 , 0x000000 ) );<br>
+setDefaultSkinSet( new FlatSkinSet( 10 , 0x000000 ) );<br><br>
 //instantiate component<br>
 var list : List = new List( this );<br>
 		list.setSize( 100 , 200 );<br>
